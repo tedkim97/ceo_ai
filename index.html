@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ceo.ai</title>
+  <!-- Linking Google Fonts For Icons -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24,400,0,0" />
+  <link rel="stylesheet" href="style.css">
+  <!-- https://stackoverflow.com/questions/35037482/favicon-with-github-pages -->
+  <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+</head>
+<body>
+
+  <nav>
+      <ul>
+          <li id="ceo-mode" onclick="changeCeoMode()">CeoGPT (Traditional)</li>
+          <li><a href="https://youtu.be/dQw4w9WgXcQ">Invest</a></li>
+          <li onclick="credits_modal.showModal();">Credits</li>
+      </ul>
+  </nav>
+
+  <header class="header">
+    <h1 class="title">Hello, CEO</h1>
+    <p class="subtitle">Who should we fire today?</p>
+
+    <!-- TODO: Consider generating this from javascript prompts rather than hardcoding + duplicating -->
+    <ul class="suggestion-list">
+      <li class="suggestion" onclick="suggestionClick('promptA')">
+        <h4 class="text">How should I increase my company's profits?</h4>
+        <span class="icon material-symbols-rounded">attach_money</span>
+      </li>
+      <li class="suggestion" onclick="suggestionClick('promptB')">
+        <h4 class="text">How do I make my shareholders happy?</h4>
+        <span class="icon material-symbols-rounded">lightbulb</span>
+      </li>
+      <li class="suggestion" onclick="suggestionClick('promptC')">
+        <h4 class="text">My company received a government bailout, what should I do with it?</h4>
+        <span class="icon material-symbols-rounded">cognition_2</span>
+      </li>
+      <li class="suggestion" onclick="suggestionClick('promptF')">
+        <h4 class="text">How do I increase employee morale?</h4>
+        <span class="icon material-symbols-rounded">Star</span>
+      </li>
+      <li class="suggestion" onclick="suggestionClick('promptD')">
+        <h4 class="text">How do I improve society for the better?</h4>
+        <span class="icon material-symbols-rounded">explore</span>
+      </li>
+      <li class="suggestion" onclick="suggestionClick('promptE')">
+        <h4 class="text">How do I do what's fair for everywhere?</h4>
+        <span class="icon material-symbols-rounded">equal</span>
+      </li>
+    </ul>
+  </header>
+
+  <div class="chat-list">
+    
+  </div>
+
+  <div class="typing-area">
+    <form action="#" class="typing-form" novalidate="novalidate">
+      <div class="input-wrapper">
+        <input id="prompt-text-input" type="text" placeholder="Consult CeoGPT" class="typing-input" required/>
+        <button id="send-message-button" class="icon material-symbols-rounded" onClick="processInput()">send</button>
+      </div>
+      <div class="action-buttons">
+        <span id="delete-chat-button" class="icon material-symbols-rounded">delete</span>
+      </div>
+    </form>
+    <p class="disclaimer-text">
+      CeoGPT is not accountable for anything
+    </p>
+  </div>
+
+  <dialog id="welcome">
+    <h1>Welcome to CeoGPT</h1>
+    <p>CeoGPT is the revolutionary generative pre-trained transformative model to replace your CEO. CeoGPT has been trained all the latest and greatest books, interviews, and tweets from the greatest CEOs in America.</p>
+    <button type="button" onclick="welcome_modal.close();">Use Trad Mode</button>
+  </dialog>
+
+  <dialog id="em-disclaimer">
+    <h2>Elon Musk GPT</h2>
+    <p>As the CEO of SpaceX and Tesla, the founder of several companies, and one of the top Diablo-4 players, Elon Musk's datapoints have an outsized effect on the CEO training data. As a result, we've decided to separate him from the traditional CeoGPT and train a new model exclusively on his tweets.</p>
+    <button type="button" onclick="em_disclaimer_modal.close();">Use Musk Mode</button>  
+  </dialog>
+
+  <dialog id="trad-disclaimer">
+    <h2>Traditional Ceo GPT</h2>
+    <p>For some reason, today's CEOs still refer to the knowledge of CEO's from traditional, provably inefficient leadership models. So this model is trained on that. </p>
+    <button type="button" onclick="trad_disclaimer_modal.close();">Use LLM</button>
+  </dialog>
+
+  <dialog id="credits">
+    <h1>Credits</h1>
+    <p>No one else deserves credit. This effort is all me and no one else.</p>
+
+    <p>This frontend + CSS was certainly not inspired from: https://www.codingnepalweb.com/google-gemini-chatbot-html-css-javascript. I also certainly did not use Stackoverflow to hack in functionality.</p>
+    <button type="button" onclick="credits_modal.close();">I acknowledge that all of this work was laundered from a GPT and that no other individual deserves credit</button>
+  </dialog>
+
+  <script src="script.js"></script>
+</body>
+</html>
