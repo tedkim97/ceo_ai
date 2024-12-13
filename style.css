@@ -14,19 +14,53 @@
   --primary-color: #242424;
   --secondary-color: #383838;
   --secondary-hover-color: #444;
+  --secondary-translucent-color: #38383880;
 }
 
-.light_mode {
+
+@media (prefers-color-scheme: light) {
+  :root {
   --text-color: #222;
   --subheading-color: #A0A0A0;
   --placeholder-color: #6C6C6C;
-  --primary-color: #FFF;
+  --primary-color: #F2F2F2;
   --secondary-color: #E9EEF6;
   --secondary-hover-color: #DBE1EA;
+  --secondary-translucent-color: #E9EEF680;
+  }
+
 }
 
 body {
   background: var(--primary-color);
+}
+
+nav {
+  position: sticky;
+  top: 0;
+  width: 100%;
+  background-color: var(--primary-color);
+  overflow: hidden;
+}
+
+nav ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+nav li {
+  float: left;
+  display: block;
+  color: var(--text-color);
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  border-radius: 0.5rem;
+}
+
+nav li:hover {
+    background-color: var(--secondary-color);
 }
 
 .header, .chat-list .message, .typing-form {
@@ -141,20 +175,12 @@ body.hide-header .header {
   color: #e55865;
 }
 
-.chat-list .message.loading .text {
-  display: none;
-}
-
 .chat-list .message .avatar {
   width: 40px;
   height: 40px;
   object-fit: cover;
   border-radius: 50%;
   align-self: flex-start;
-}
-
-.chat-list .message.loading .avatar {
-  animation: rotate 3s linear infinite;
 }
 
 @keyframes rotate {
@@ -182,46 +208,8 @@ body.hide-header .header {
   visibility: hidden;
 }
 
-.chat-list .message:not(.loading, .error):hover .icon:not(.hide){
-  visibility: visible;
-}
-
 .chat-list .message .icon:hover {
   background: var(--secondary-hover-color);
-}
-
-.chat-list .message .loading-indicator {
-  display: none;
-  gap: 0.8rem;
-  width: 100%;
-  flex-direction: column;
-}
-
-.chat-list .message.loading .loading-indicator {
-  display: flex;
-}
-
-.chat-list .message .loading-indicator .loading-bar {
-  height: 11px;
-  width: 100%;
-  border-radius: 0.135rem;
-  background-position: -800px 0;
-  background: linear-gradient(to right, #4285f4, var(--primary-color), #4285f4);
-  animation: loading 3s linear infinite;
-}
-
-.chat-list .message .loading-indicator .loading-bar:last-child {
-  width: 70%;
-}
-
-@keyframes loading {
-  0% {
-    background-position: -800px 0;
-  }
-
-  100% {
-    background-position: 800px 0;
-  }
 }
 
 .typing-area {
@@ -338,4 +326,66 @@ body.hide-header .header {
     font-size: 0.75rem;
     margin-top: 0.5rem;
   }
+}
+
+dialog {
+  background-color: var(--secondary-color);
+  color: var(--text-color);
+  text-align: center;
+  padding: 50px;
+} 
+
+dialog::backdrop {
+  background-color: var(--secondary-translucent-color);
+}
+
+:modal {
+  border: none;
+  border-radius: 0.5rem;
+  top: 50%; 
+  left:50%;
+  -webkit-transform:translateY(-50%) translateX(-50%);
+  -moz-transform:translateY(-50%) translateX(-50%);
+  -ms-transform:translateY(-50%) translateX(-50%);
+  -o-transform:translateY(-50%) translateX(-50%);
+  transform:translateY(-50%) translateX(-50%);
+}
+
+/* Disable Link Coloring*/
+a, a:hover, a:visited, a:active {
+  color: inherit;
+  text-decoration: none;
+}
+
+/*https://www.w3schools.com/howto/howto_css_loader.asp*/
+.loader {
+  border: 10px solid var(--subheading-color);
+  border-radius: 50%;
+  border-top: 10px solid var(--secondary-color);
+  width: 40px;
+  height: 40px;
+  -webkit-animation: spin 2s linear infinite;
+  animation: spin 2s linear infinite;
+}
+
+@-webkit-keyframes spin {
+  0% { -webkit-transform: rotate(0deg); }
+  100% { -webkit-transform: rotate(360deg); }
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+button {
+  background-color: var(--primary-color);
+  border: none;
+  color: var(--text-color);
+  text-align: center;
+  padding: 2px;
+}
+
+button:hover {
+  background-color: --var(--secondary-hover-color);
 }

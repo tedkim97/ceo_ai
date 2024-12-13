@@ -1,6 +1,19 @@
 # README
 
+```
+python -m http.server
+```
+
 ## TODO
-Pop up window
-Response loading animation
-NAV bar that lets you pick your CEO
+
+### Funnier/More flavorful favicon
+
+### Better choices for images
+
+### Use an autolinter/formatter to clean up the HTML/JS
+
+### More jokes
+- Complete EM mode
+
+
+### Refactor the messy JS + HTML 
