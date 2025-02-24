@@ -3,8 +3,8 @@ var first_visit = true;
 // Apparently javascript doesn't have a native enum type?
 var ceo_mode = "TRADITIONAL";
 
-const PEASANT_IMAGE = "assets/peasant2.jpg"
-const CEO_IMAGE = "assets/ceo2.jpg"
+const PEASANT_IMAGE = "assets/peasant.jpg"
+const CEO_IMAGE = "assets/ceo.jpg"
 const JOKES = [
 	"Layoff half your work force",
 	"Increase your executive compensation",
