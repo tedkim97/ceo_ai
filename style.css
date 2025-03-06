@@ -332,7 +332,7 @@ dialog {
   background-color: var(--secondary-color);
   color: var(--text-color);
   text-align: center;
-  padding: 50px;
+  padding: 30px;
 } 
 
 dialog::backdrop {
@@ -383,7 +383,9 @@ button {
   border: none;
   color: var(--text-color);
   text-align: center;
-  padding: 2px;
+  border-radius: 8px;
+  padding: 10px;
+  margin-top: 10px;
 }
 
 button:hover {
