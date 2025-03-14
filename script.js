@@ -12,6 +12,9 @@ const JOKES = [
   "Hm that's a tough one. Have you tried issuing share buybacks?",
   "Add AI to your product",
   "Sorry, that sounds like something a peasa-. I mean \"junior\" employee does, not an executive like me",
+  "Sorry, that sounds like a problem for the next CEO. I'm out.",
+  "AI will probably most likely lead to the end of the world, but in the meantime, there'll be great companies",
+  "Hm, that sounds like a next fiscal quarter problem."
 ];
 
 var EM_WISDOM = ["Apologies. CeoGPT is having difficulties processing the immense tweet volume"];
